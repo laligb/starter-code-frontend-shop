@@ -89,7 +89,6 @@ function buy(id) {
 
       // 2. Add found product to the cart array
       const productInCart = cart.find((n) => n.id === element.id);
-      console.log(productInCart);
 
       if (productInCart) {
         productInCart.quantity++;
@@ -102,7 +101,6 @@ function buy(id) {
       }
     }
   });
-  console.log(cart);
 }
 
 // Creating global object for buy
@@ -123,13 +121,21 @@ function calculateTotal() {
     0
   );
 
-  console.log(totalPrice);
+  console.log("total price= " + totalPrice);
   return totalPrice;
 }
 
 // Exercise 4
 function applyPromotionsCart(cart) {
   // Apply promotions to each item in the array "cart"
+  cart.forEach((item) => {
+    if (item.offer) {
+      if (item.quantity >= item.offer.number) {
+        let discount = (item.price * item.offer.percent) / 100;
+        item.subtotalWithDiscount = (item.price - discount) * item.quantity;
+      }
+    }
+  });
 }
 
 // Exercise 5
