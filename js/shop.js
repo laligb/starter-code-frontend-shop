@@ -80,7 +80,7 @@ var cart = [];
 var total = 0;
 
 // Exercise 1
-export function buy(id) {
+function buy(id) {
   console.log(id);
   // 1. Loop for to the array products to get the item to add to cart
   products.forEach((element) => {
@@ -100,10 +100,14 @@ export function buy(id) {
 }
 
 // Creating global object for buy
-window.buy = buy;
+//window.buy = buy;
 
 // Exercise 2
-function cleanCart() {}
+function cleanCart() {
+  cart = [];
+  console.log(cart);
+}
+//window.cleanCart = cleanCart;
 
 // Exercise 3
 function calculateTotal() {
