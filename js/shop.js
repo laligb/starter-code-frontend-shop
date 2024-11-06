@@ -86,12 +86,18 @@ function buy(id) {
   products.forEach((element) => {
     if (element.id === id) {
       console.log(element);
+
       // 2. Add found product to the cart array
-      const isInCart = cart.some((n) => n.id === element.id);
-      if (isInCart) {
-        alert(`${element.name} is already in a cart`);
+      const productInCart = cart.find((n) => n.id === element.id);
+      console.log(productInCart);
+
+      if (productInCart) {
+        productInCart.quantity++;
+        console.log(
+          `quantity of ${productInCart.name} is ${productInCart.quantity}`
+        );
       } else {
-        cart.push(element);
+        cart.push({ ...element, quantity: 1 });
         console.log(`${element.name} added to cart`);
       }
     }
@@ -119,7 +125,7 @@ function calculateTotal() {
 }
 
 // Exercise 4
-function applyPromotionsCart() {
+function applyPromotionsCart(cart) {
   // Apply promotions to each item in the array "cart"
 }
 
