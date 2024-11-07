@@ -1,28 +1,33 @@
-
 // Exercise 6
-function validate() {
-	var error = 0;
-	// Get the input fields
-	var fName = document.getElementById("fName");
-	var fEmail = document.getElementById("fEmail");
 
-	// Get the error elements
-	var errorName = document.getElementById("errorName");
-	var errorEmail = document.getElementById("errorEmail");  
-	
-	// Validate fields entered by the user: name, phone, password, and email
-	if(fName.value == ""){
-		error++;
-	}
+function validate(event) {
+  event.preventDefault();
 
-	if(fEmail.value == ""){
-		error++;
-	}
-	 
-	if(error>0){
-		alert("Error");
-	}else{
-		alert("OK");
-	}
+  var error = 0;
 
+  // Select all inputs inside the form
+  const form = event.target;
+  const inputs = form.querySelectorAll("input");
+
+  console.log(inputs);
+
+  // Loop for all inputs. is-valid and is-invalid are bootstrap methods to make inputs red and green.
+  inputs.forEach((input) => {
+    // Clear previous validation classes
+    input.classList.remove("is-valid", "is-invalid");
+
+    if (input.checkValidity()) {
+      input.classList.add("is-valid");
+    } else {
+      input.classList.add("is-invalid");
+      error++;
+    }
+  });
+
+  // Runs alerts on successful or unsuccessfull validation
+  if (error > 0) {
+    alert("Please correct the errors in the form.");
+  } else {
+    alert("Form submitted successfully.");
+  }
 }
