@@ -141,6 +141,36 @@ function applyPromotionsCart(cart) {
 // Exercise 5
 function printCart() {
   // Fill the shopping cart modal manipulating the shopping cart dom
+  total = 0;
+
+  applyPromotionsCart(cart);
+
+  let modal = document
+    .getElementById("cartModal")
+    .getElementsByTagName("tbody")[0];
+  console.log(modal);
+  modal.innerHTML = "";
+
+  cart.forEach((element) => {
+    let row = document.createElement("tr");
+    let totalOfElement = element.subtotalWithDiscount
+      ? element.subtotalWithDiscount.toFixed(2)
+      : (element.price * element.quantity).toFixed(2);
+
+    row.innerHTML = `
+      <td>${element.name}</td>
+      <td>$${element.price.toFixed(2)}</td>
+      <td>${element.quantity}</td>
+      <td>$${totalOfElement}</td>
+    `;
+    console.log(row);
+    modal.appendChild(row);
+
+    total += Number(totalOfElement);
+  });
+
+  let totalDom = document.getElementById("total");
+  totalDom.innerText = `$${total}`;
 }
 
 // ** Nivell II **
