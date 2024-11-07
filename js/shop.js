@@ -158,12 +158,22 @@ function printCart() {
       ? element.subtotalWithDiscount.toFixed(2)
       : (element.price * element.quantity).toFixed(2);
 
+    let deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Remove";
+    deleteBtn.classList.add("btn", "btn-danger");
+    deleteBtn.addEventListener("click", () => removeFromCart(element.id));
+
+    let deleteCell = document.createElement("td");
+    deleteCell.appendChild(deleteBtn);
+
     row.innerHTML = `
       <td>${element.name}</td>
       <td>$${element.price.toFixed(2)}</td>
       <td>${element.quantity}</td>
       <td>$${totalOfElement}</td>
     `;
+    row.appendChild(deleteCell);
+
     console.log(row);
     modal.appendChild(row);
 
@@ -177,7 +187,27 @@ function printCart() {
 // ** Nivell II **
 
 // Exercise 7
-function removeFromCart(id) {}
+function removeFromCart(id) {
+  console.log("id =" + id);
+  console.log(cart);
+  cart.forEach((item) => {
+    if (item.id === id) {
+      if (item.quantity > 1) {
+        item.quantity--;
+
+        if (item.subtotalWithDiscount && item.quantity <= item.offer.number) {
+          delete item.subtotalWithDiscount;
+        }
+      } else {
+        cart = cart.filter((item) => item.id !== id);
+      }
+    }
+  });
+  console.log(cart);
+  printCart();
+
+  // NEED TO ADD UPDATE TOTAL AND DISCOUNT
+}
 
 function open_modal() {
   printCart();
