@@ -110,6 +110,7 @@ function buy(id) {
 function cleanCart() {
   cart = [];
   console.log(cart);
+  printCart();
 }
 //window.cleanCart = cleanCart;
 
