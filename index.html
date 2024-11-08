@@ -57,16 +57,16 @@
             <li class="dropdown search-dropdown nav-item py-lg-3">
               <a
                 href="javascript:void(0)"
-                class="btn btn-outline-dark flex-center"
+                class="btn btn-outline-danger flex-center"
                 type="button"
                 data-bs-toggle="modal"
                 data-bs-target="#cartModal"
                 onclick="open_modal()"
                 data-bs-auto-close="outside"
               >
-                <i class="fas fa-shopping-cart me-1"></i> Cart
+                <i class="fas fa-shopping-cart me-1 text-danger"></i> Cart
                 <span
-                  class="badge bg-dark text-white ms-1 rounded-pill"
+                  class="badge text-white ms-1 rounded-pill bg-danger"
                   id="count_product"
                   >0</span
                 >
@@ -79,17 +79,17 @@
           <ul class="navbar-nav me-auto mb-4 mb-lg-0 ms-lg-5">
             <li class="nav-item">
               <a class="nav-link" href="#grocery"
-                ><i class="fas fa-shopping-basket"></i> Grocery</a
+                ><i class="fas fa-shopping-basket text-warning"></i> Grocery</a
               >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#beauty"
-                ><i class="fas fa-heart"></i> Beauty</a
+                ><i class="fas fa-heart text-danger"></i> Beauty</a
               >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#clothes"
-                ><i class="fas fa-tshirt"></i> Clothes</a
+                ><i class="fas fa-tshirt text-primary"></i> Clothes</a
               >
             </li>
           </ul>
@@ -98,11 +98,11 @@
     </nav>
 
     <!-- Header-->
-    <header class="bg-dark py-5">
+    <header class="bg-dark py-5" style="background: url('./images/banner.png')">
       <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
           <h1 class="display-4 fw-bolder">IT Academy Shop</h1>
-          <p class="lead fw-normal text-white-50 mb-0">
+          <p class="lead fw-bold text-danger mb-0">
             Get up to 50% off Today Only!
           </p>
         </div>
@@ -111,7 +111,7 @@
     <!-- Section-->
     <section class="pt-5" id="grocery">
       <h2 class="text-center">
-        <i class="fas fa-shopping-basket pe-3"></i>Grocery
+        <i class="fas fa-shopping-basket pe-3 text-warning"></i>Grocery
       </h2>
       <div class="container px-4 px-lg-5 mt-5">
         <div
@@ -119,7 +119,7 @@
         >
           <div class="col mb-5">
             <div class="card h-100">
-              <img class="card-img-top" src="./images/product.svg" alt="..." />
+              <img class="card-img-top" src="./images/oil.png" alt="..." />
               <div class="card-body p-4">
                 <div class="text-center">
                   <h5 class="fw-bolder">Cooking Oil</h5>
@@ -131,7 +131,7 @@
                   <button
                     type="button"
                     onclick="buy(1)"
-                    class="btn btn-outline-dark"
+                    class="btn btn-warning fw-bold"
                   >
                     Add to cart
                   </button>
@@ -141,7 +141,7 @@
           </div>
           <div class="col mb-5">
             <div class="card h-100">
-              <img class="card-img-top" src="./images/product.svg" alt="..." />
+              <img class="card-img-top" src="./images/pasta.png" alt="..." />
               <div class="card-body p-4">
                 <div class="text-center">
                   <h5 class="fw-bolder">Pasta</h5>
@@ -153,7 +153,7 @@
                   <button
                     type="button"
                     onclick="buy(2)"
-                    class="btn btn-outline-dark"
+                    class="btn btn-warning fw-bold"
                   >
                     Add to cart
                   </button>
@@ -163,7 +163,7 @@
           </div>
           <div class="col mb-5">
             <div class="card h-100">
-              <img class="card-img-top" src="./images/product.svg" alt="..." />
+              <img class="card-img-top" src="./images/cupcake.png" alt="..." />
               <div class="card-body p-4">
                 <div class="text-center">
                   <h5 class="fw-bolder">Instant cupcake mixture</h5>
@@ -175,7 +175,7 @@
                   <button
                     type="button"
                     onclick="buy(3)"
-                    class="btn btn-outline-dark"
+                    class="btn btn-warning fw-bold"
                   >
                     Add to cart
                   </button>
@@ -187,14 +187,20 @@
       </div>
     </section>
     <section class="pt-5" id="beauty">
-      <h2 class="text-center"><i class="fas fa-heart pe-3"></i>Beauty</h2>
+      <h2 class="text-center">
+        <i class="fas fa-heart pe-3 text-danger"></i>Beauty
+      </h2>
       <div class="container px-4 px-lg-5 mt-5">
         <div
           class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
         >
           <div class="col mb-5">
             <div class="card h-100">
-              <img class="card-img-top" src="./images/product.svg" alt="..." />
+              <img
+                class="card-img-top"
+                src="./images/all-in-one.png"
+                alt="..."
+              />
               <div class="card-body p-4">
                 <div class="text-center">
                   <h5 class="fw-bolder">All-in-1</h5>
@@ -203,11 +209,7 @@
               </div>
               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                 <div class="text-center">
-                  <button
-                    type="button"
-                    onclick="buy(4)"
-                    class="btn btn-outline-dark"
-                  >
+                  <button type="button" onclick="buy(4)" class="btn btn-danger">
                     Add to cart
                   </button>
                 </div>
@@ -216,7 +218,11 @@
           </div>
           <div class="col mb-5">
             <div class="card h-100">
-              <img class="card-img-top" src="./images/product.svg" alt="..." />
+              <img
+                class="card-img-top"
+                src="./images/zero-makeup.png"
+                alt="..."
+              />
               <div class="card-body p-4">
                 <div class="text-center">
                   <h5 class="fw-bolder">Zero makeup kit</h5>
@@ -225,11 +231,7 @@
               </div>
               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                 <div class="text-center">
-                  <button
-                    type="button"
-                    onclick="buy(5)"
-                    class="btn btn-outline-dark"
-                  >
+                  <button type="button" onclick="buy(5)" class="btn btn-danger">
                     Add to cart
                   </button>
                 </div>
@@ -238,7 +240,11 @@
           </div>
           <div class="col mb-5">
             <div class="card h-100">
-              <img class="card-img-top" src="./images/product.svg" alt="..." />
+              <img
+                class="card-img-top"
+                src="./images/lipsticks.png"
+                alt="..."
+              />
               <div class="card-body p-4">
                 <div class="text-center">
                   <h5 class="fw-bolder">Lip tints</h5>
@@ -247,11 +253,7 @@
               </div>
               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                 <div class="text-center">
-                  <button
-                    type="button"
-                    onclick="buy(6)"
-                    class="btn btn-outline-dark"
-                  >
+                  <button type="button" onclick="buy(6)" class="btn btn-danger">
                     Add to cart
                   </button>
                 </div>
@@ -262,14 +264,16 @@
       </div>
     </section>
     <section class="pt-5" id="clothes">
-      <h2 class="text-center"><i class="fas fa-tshirt pe-3"></i>Clothes</h2>
+      <h2 class="text-center">
+        <i class="fas fa-tshirt pe-3 text-primary"></i>Clothes
+      </h2>
       <div class="container px-4 px-lg-5 mt-5">
         <div
           class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
         >
           <div class="col mb-5">
             <div class="card h-100">
-              <img class="card-img-top" src="./images/product.svg" alt="..." />
+              <img class="card-img-top" src="./images/dress.png" alt="..." />
               <div class="card-body p-4">
                 <div class="text-center">
                   <h5 class="fw-bolder">Lawn dress</h5>
@@ -281,7 +285,7 @@
                   <button
                     type="button"
                     onclick="buy(7)"
-                    class="btn btn-outline-dark"
+                    class="btn btn-primary"
                   >
                     Add to cart
                   </button>
@@ -291,7 +295,11 @@
           </div>
           <div class="col mb-5">
             <div class="card h-100">
-              <img class="card-img-top" src="./images/product.svg" alt="..." />
+              <img
+                class="card-img-top"
+                src="./images/bluedress.png"
+                alt="..."
+              />
               <div class="card-body p-4">
                 <div class="text-center">
                   <h5 class="fw-bolder">Lawn-chiffon combo</h5>
@@ -303,7 +311,7 @@
                   <button
                     type="button"
                     onclick="buy(8)"
-                    class="btn btn-outline-dark"
+                    class="btn btn-primary"
                   >
                     Add to cart
                   </button>
@@ -313,7 +321,7 @@
           </div>
           <div class="col mb-5">
             <div class="card h-100">
-              <img class="card-img-top" src="./images/product.svg" alt="..." />
+              <img class="card-img-top" src="./images/frock.png" alt="..." />
               <div class="card-body p-4">
                 <div class="text-center">
                   <h5 class="fw-bolder">Toddler Frock</h5>
@@ -325,7 +333,7 @@
                   <button
                     type="button"
                     onclick="buy(9)"
-                    class="btn btn-outline-dark"
+                    class="btn btn-primary"
                   >
                     Add to cart
                   </button>
@@ -338,7 +346,7 @@
     </section>
 
     <!-- Footer-->
-    <footer class="py-3 bg-dark">
+    <footer class="py-3 bg-primary">
       <div class="container">
         <p class="m-0 text-center text-white">
           Copyright &copy; Your Website 2023
@@ -355,7 +363,7 @@
     >
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
+          <div class="modal-header bg-warning">
             <h5 class="modal-title" id="exampleModalLabel">
               <i class="fas fa-cart-arrow-down"></i> My Cart
             </h5>
@@ -367,7 +375,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <h3 class="text-center bill px-5">Shopping Cart</h3>
+            <h3 class="text-center bill px-5 text-danger">Shopping Cart</h3>
             <table class="table">
               <thead>
                 <tr>
@@ -388,7 +396,7 @@
               <a
                 href="javascript:void(0)"
                 onclick="cleanCart()"
-                class="btn btn-primary m-3"
+                class="btn btn-outline-primary m-3"
                 >Clean Cart</a
               >
             </div>
