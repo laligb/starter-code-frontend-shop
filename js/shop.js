@@ -76,7 +76,7 @@ var products = [
 // but each one has a quantity field to define its quantity, so these products
 // are not repeated.
 var cart = [];
-
+let count = 0;
 var total = 0;
 
 // Exercise 1
@@ -86,6 +86,7 @@ function buy(id) {
   products.forEach((element) => {
     if (element.id === id) {
       console.log(element);
+      countProducts();
 
       // 2. Add found product to the cart array
       const productInCart = cart.find((n) => n.id === element.id);
@@ -110,6 +111,7 @@ function buy(id) {
 function cleanCart() {
   cart = [];
   console.log(cart);
+  document.getElementById("count_product").innerHTML = 0;
   printCart();
 }
 //window.cleanCart = cleanCart;
@@ -194,21 +196,35 @@ function removeFromCart(id) {
     if (item.id === id) {
       if (item.quantity > 1) {
         item.quantity--;
+        reduceCount();
 
         if (item.subtotalWithDiscount && item.quantity <= item.offer.number) {
           delete item.subtotalWithDiscount;
         }
       } else {
         cart = cart.filter((item) => item.id !== id);
+        reduceCount();
       }
     }
   });
   console.log(cart);
   printCart();
-
-  // NEED TO ADD UPDATE TOTAL AND DISCOUNT
 }
 
 function open_modal() {
   printCart();
+}
+
+function countProducts() {
+  count++;
+  let countProduct = document.getElementById("count_product");
+  countProduct.innerHTML = count;
+}
+
+function reduceCount() {
+  if (count !== 0) {
+    count--;
+    let countProduct = document.getElementById("count_product");
+    countProduct.innerHTML = count;
+  }
 }
