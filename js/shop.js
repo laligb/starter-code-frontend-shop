@@ -1,5 +1,3 @@
-//import products from "./products.json" assert { type: "json" };
-//console.log(products);
 var products = [
   {
     id: 1,
@@ -65,27 +63,15 @@ var products = [
   },
 ];
 
-// => Reminder, it's extremely important that you debug your code.
-// ** It will save you a lot of time and frustration!
-// ** You'll understand the code better than with console.log(), and you'll
-// also find errors faster.
-// ** Don't hesitate to seek help from your peers or your mentor if you still
-// struggle with debugging.
-
-// Improved version of cartList. Cart is an array of products (objects),
-// but each one has a quantity field to define its quantity, so these products
-// are not repeated.
 var cart = [];
 let count = 0;
 var total = 0;
 
 // Exercise 1
 function buy(id) {
-  console.log(id);
   // 1. Loop for to the array products to get the item to add to cart
   products.forEach((element) => {
     if (element.id === id) {
-      console.log(element);
       countProducts();
 
       // 2. Add found product to the cart array
@@ -93,38 +79,28 @@ function buy(id) {
 
       if (productInCart) {
         productInCart.quantity++;
-        console.log(
-          `quantity of ${productInCart.name} is ${productInCart.quantity}`
-        );
       } else {
         cart.push({ ...element, quantity: 1 });
-        console.log(`${element.name} added to cart`);
       }
     }
   });
 }
 
-// Creating global object for buy
-//window.buy = buy;
-
 // Exercise 2
 function cleanCart() {
   cart = [];
-  console.log(cart);
   document.getElementById("count_product").innerHTML = 0;
+  count = 0;
   printCart();
 }
-//window.cleanCart = cleanCart;
 
 // Exercise 3
 function calculateTotal() {
-  // Calculate total price of the cart using the "cartList" array
   let totalPrice = cart.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
 
-  console.log("total price= " + totalPrice);
   return totalPrice;
 }
 
@@ -151,7 +127,7 @@ function printCart() {
   let modal = document
     .getElementById("cartModal")
     .getElementsByTagName("tbody")[0];
-  console.log(modal);
+
   modal.innerHTML = "";
 
   cart.forEach((element) => {
@@ -176,7 +152,6 @@ function printCart() {
     `;
     row.appendChild(deleteCell);
 
-    console.log(row);
     modal.appendChild(row);
 
     total += Number(totalOfElement);
@@ -190,8 +165,6 @@ function printCart() {
 
 // Exercise 7
 function removeFromCart(id) {
-  console.log("id =" + id);
-  console.log(cart);
   cart.forEach((item) => {
     if (item.id === id) {
       if (item.quantity > 1) {
@@ -207,7 +180,7 @@ function removeFromCart(id) {
       }
     }
   });
-  console.log(cart);
+
   printCart();
 }
 
