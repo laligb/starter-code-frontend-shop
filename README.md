@@ -13,9 +13,6 @@ This project is part of Sprint 2 for IT Academy. It is a demo e-commerce applica
 - [Live Demo](#live-demo)
 - [Requirements](#requirements)
 - [Project Setup](#project-setup)
-- [Features](#features)
-- [Instructions](#instructions)
-- [Screenshots](#screenshots)
 - [Contributing](#contributing)
 
 ---
