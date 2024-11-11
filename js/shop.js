@@ -158,7 +158,7 @@ function printCart() {
   });
 
   let totalDom = document.getElementById("total");
-  totalDom.innerText = `$${total}`;
+  totalDom.innerText = `$${total.toFixed(2)}`;
 }
 
 // ** Nivell II **
