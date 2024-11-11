@@ -1,66 +1,85 @@
 # Sprint 2 IT Academy | Shop
 
-## Introduction
+Customized by [Lali](https://github.com/laligb)
 
-A company in the e-commerce sector has asked us for a web application that allows them to offer the purchase of their products through the internet.
+## Project Description
 
-You will be in charge of setting up an initial demo version of the application for the client: management of the shopping cart and the application of the promotions on the final price. You have 1 week to finish this part of sprint (2.2).
+This project is part of Sprint 2 for IT Academy. It is a demo e-commerce application that allows users to manage a shopping cart and apply promotions on the final price. This initial version focuses on setting up core features of the application, such as product listings, cart functionality, and checkout calculations.
 
-<br>
+---
+
+## Table of Contents
+
+- [Live Demo](#live-demo)
+- [Requirements](#requirements)
+- [Project Setup](#project-setup)
+- [Features](#features)
+- [Instructions](#instructions)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+
+---
+
+## Live Demo
+
+You can view the live version of this project here: [starter-code-frontend-shop](https://starter-code-frontend-shop.vercel.app/)
+
+---
 
 ## Requirements
 
+To set up this project, ensure that you have the following:
 
-1. Clone this repo
-```bash
-$ git clone https://github.com/IT-Academy-BCN/starter-code-frontend-shop
-```
+- [Node.js](https://nodejs.org/) (version 14.x or above)
+- [Git](https://git-scm.com/)
 
-2. Unlink your repo from the itacademy repository.
-(Explanation: You have to upload the code to your GitHub repository, not to the IT Academy. That's why you have to unlink your project from IT Academy GitHub with the following command)
+---
 
-```bash
-$ git remote rm origin
-```
+## Project Setup
 
-3. Link your repo to the repository you have to create in your github account
-(Explanation: Now your project is not linked to any remote repository. In order to upload your code, you have to link your project to the new repository created on github.com using the following command)
+1. **Clone this repository**:
 
-```bash
-$ git remote add origin <your repo name!>
-```
+   ```bash
+   git clone https://github.com/laligb/starter-code-frontend-shop
+   cd starter-code-frontend-shop
+   ```
 
-<br>
+2. **Run a Local Server**:
 
-## Submission
+   - To serve the project on `localhost`, you can use any simple HTTP server. Here are a couple of options:
 
-1. It is necessary to upload each exercise in a separate commit. The commit name must clearly indicate its content.
+     **Using Node.js HTTP Server**:
 
-2. Upload the link to your GitHub repository to the virtual campus, enabling your mentor to review and provide feedback.
+     - If you have Node.js installed, you can install `http-server` globally and run it in the project directory:
+       ```bash
+       npm install -g http-server
+       http-server -p 8080 .
+       ```
 
+     **Using Live Server in VS Code**:
 
+     - Open the project folder in [VS Code](https://code.visualstudio.com/).
+     - Install the [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
+     - Right-click on the `index.html` file and select "Open with Live Server".
+     - This will typically open the project on `http://localhost:5500` or similar; adjust the port if needed to match `8080`.
 
-<br>
+3. **View in Browser**:
+   - After starting the server, open your browser and go to `http://localhost:8080` to view the application.
 
-## Introduction
+## Features
 
-The statement of the exercise is available on the virtual campus.
+- **Shopping Cart Management**: Add, remove, and update products in the cart.
+- **Promotions**: Apply discounts and promotions on selected products.
+- **Product Categories**: View a small selection of 9 hardcoded products divided into 3 categories.
+- **Console Output for Logic Functions**: View results of functions via the console, as this version doesn’t yet include a full backend.
 
-<br>
+---
 
+## Acknowledgments
 
-## Instructions
+- Thanks to IT Academy for providing the starter code and project guidelines.
+- Built with guidance from the frontend manager at IT Academy.
 
-You have the following indications from the frontend manager:
+---
 
-- You have prepared the base of the project on which you will work: https://github.com/IT-Academy-BCN/starter-code-frontend-shop
-
-- The base of the project on which you will work has already created all the files, and an initial version of the interface, so you can focus on programming the logic.
-
-- As at the moment we don't consume data from a server using an API, we will work with hardcoded data in the application. For the moment we will implement the logic using a small group of 9 products divided in 3 sections.
-
-- Except for the last level, showing the result of the functions by console is enough.
-
-- The logic to implement will be placed in the src/grocery.js and src/checkout.js files. You will see that the built in functions have already been created for you to implement them.
-
-- It is forbidden to copy the code, since this way you don't learn anything. Furthermore, as you can see, the second release of sprint 5 is a mini-level test with the mentor, in which you will have to demonstrate live that you have acquired the javascript concepts. Don't worry, if you work on the releases you won't have any problems.
+This is a demo project for educational purposes. For more information, visit the [original repository](https://github.com/IT-Academy-BCN/starter-code-frontend-shop).
